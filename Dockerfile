@@ -40,11 +40,11 @@ RUN set -eux; \
         pecl channel-update pecl.php.net && \
     printf "\n" | pecl install -o -f \
         swoole \
-        imagemagick \
+        imagick \
         redis; \
     docker-php-ext-enable \
         swoole \
-        imagemagick \
+        imagick \
         redis && \
     docker-php-source delete && \
     apt-mark auto '.*' > /dev/null; \
