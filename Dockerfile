@@ -19,3 +19,10 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
   redis && \
   #somke test
   php --version
+
+RUN apt-get update \
+    && apt-get install -y cron \
+    && apt-get clean \
+    && apt-get autoclean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
